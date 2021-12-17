@@ -1,9 +1,7 @@
-package cl.app.proyecto;
-package registerUser;
+package cl.app.proyecto_n2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.drm.DrmStore;
 import android.os.Bundle;
@@ -17,15 +15,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-
-import org.json.JSONArray;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import cl.app.proyecto_n2.LoginActivity;
 import cl.app.proyecto_n2.R;
+import org.json.JSONArray;
 
 public class Registrarse extends AppCompatActivity {
 
@@ -75,11 +69,11 @@ public class Registrarse extends AppCompatActivity {
                         registerUser();
                     }
                     else {
-                        Toast.makeText( LoginActivity.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
+                        Toast.makeText( Registrarse.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
-                    Toast.makeText( LoginActivity.this, "Debe completar los campos vacios", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( Registrarse.this, "Debe completar los campos vacios", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -104,17 +98,17 @@ public class Registrarse extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
 
                             if (task.isSuccessful()) {
-                                startActivity(new Intent(MainActivity.this, PorfileActivity.class));
+                                startActivity(new Intent(Registrarse.this, LoginActivity.class));
                                 finish();
                             }
                             else{
-                                Toast.makeText( LoginActivity.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Registrarse.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 }
                 else {
-                    Toast.makeText( LoginActivity.this, "Debe completar los campos vacios", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registrarse.this, "Debe completar los campos vacios", Toast.LENGTH_SHORT).show();
                 }
             }
         });

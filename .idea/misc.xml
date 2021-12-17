@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_asiento_pasajero.xml" value="0.33" />
+        <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_boleto_reserva.xml" value="0.2608695652173913" />
         <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_login.xml" value="0.26721014492753625" />
-        <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_main.xml" value="0.26721014492753625" />
+        <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_main.xml" value="0.2608695652173913" />
         <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_registrarse.xml" value="0.26721014492753625" />
-        <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/Erick/AndroidStudioProjects/Proyecto_N2/app/src/main/res/layout/activity_splash.xml" value="0.371875" />
       </map>
     </option>
   </component>
