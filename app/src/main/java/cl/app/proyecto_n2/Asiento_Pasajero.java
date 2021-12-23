@@ -3,6 +3,7 @@ package cl.app.proyecto_n2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -65,6 +66,13 @@ public class Asiento_Pasajero extends AppCompatActivity {
             }
         });
 
+
+    }
+
+
+    public void reserva(View v){
+        Intent reserva = new Intent(this, Boleto_Reserva.class);
+        startActivity(reserva);
 
     }
 }

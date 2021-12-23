@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
         txt_correo = (TextView)  findViewById(R.id.txt_correo);
         txt_contraseña = (TextView)  findViewById(R.id.txt_contraseña);
 
+
+
         bt_reg = (Button)  findViewById(R.id.bt_reg);
         bt_log = (Button)  findViewById(R.id.bt_log);
 
@@ -35,6 +38,28 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void login (View v){
+        if(!txt_correo.getText().toString().isEmpty()   && !txt_contraseña.getText().toString().isEmpty() ){
+
+
+            Intent intentlog = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intentlog);
+
+        }else{
+            Toast.makeText( LoginActivity.this, "Debe completar los campos vacios", Toast.LENGTH_SHORT).show();
+
+        }
+
 
     }
+
+    public void registrar (View v){
+        Intent intentRegistro = new Intent(this, Registrarse.class);
+        startActivity(intentRegistro);
+
+    }
+
+
 }

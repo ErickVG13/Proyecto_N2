@@ -98,6 +98,7 @@ public class Registrarse extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
 
                             if (task.isSuccessful()) {
+                                Toast.makeText(Registrarse.this, "Registro Exitoso", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Registrarse.this, LoginActivity.class));
                                 finish();
                             }
