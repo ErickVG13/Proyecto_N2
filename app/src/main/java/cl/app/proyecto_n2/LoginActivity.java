@@ -9,10 +9,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button bt_reg;
     Button bt_log;
+    Button bt_getUsersButton;
     TextView txt_correo;
     TextView txt_contraseña;
 
@@ -28,17 +32,11 @@ public class LoginActivity extends AppCompatActivity {
 
         bt_reg = (Button)  findViewById(R.id.bt_reg);
         bt_log = (Button)  findViewById(R.id.bt_log);
+        bt_getUsersButton = (Button) findViewById(R.id.getUsersButton);
 
-        bt_reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            //    Intent intentReg = new Intent(LoginActivity.this, Registrarse.class)
-                //  LoginActivity.this.startActivity(intentReg);
-
-            }
-        });
     }
+
+
 
     public void login (View v){
         if(!txt_correo.getText().toString().isEmpty()   && !txt_contraseña.getText().toString().isEmpty() ){

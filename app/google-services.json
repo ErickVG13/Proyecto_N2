@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "926815246387",
-    "project_id": "proyecton2",
-    "storage_bucket": "proyecton2.appspot.com"
+    "project_number": "188350144744",
+    "firebase_url": "https://buses-perl-default-rtdb.firebaseio.com",
+    "project_id": "buses-perl",
+    "storage_bucket": "buses-perl.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:926815246387:android:35cc1dadb884160bd3eb46",
+        "mobilesdk_app_id": "1:188350144744:android:c0db65326e4dc450a7295d",
         "android_client_info": {
           "package_name": "cl.app.proyecto_n2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "926815246387-arm205pects8645vrgjm3ncc0bfv4dmh.apps.googleusercontent.com",
+          "client_id": "188350144744-spkec9422feaspmggrgbcung3s9rcmds.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDCfBNatx5rEugolNX2yowBsAkXriS5n9A"
+          "current_key": "AIzaSyB3_KJ0hDmgvbI3aROzplgaXPYVWPYAzZs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "926815246387-arm205pects8645vrgjm3ncc0bfv4dmh.apps.googleusercontent.com",
+              "client_id": "188350144744-spkec9422feaspmggrgbcung3s9rcmds.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

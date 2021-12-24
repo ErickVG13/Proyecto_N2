@@ -19,4 +19,8 @@ public class Boleto_Reserva extends AppCompatActivity {
        System.exit(0);
 
     }
+    public  void  aceptar(View v){
+        finish();
+
+    }
 }

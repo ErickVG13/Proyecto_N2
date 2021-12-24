@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
+
 import cl.app.proyecto_n2.LoginActivity;
 import cl.app.proyecto_n2.R;
 import org.json.JSONArray;
@@ -30,10 +32,7 @@ public class Registrarse extends AppCompatActivity {
     private TextView txt_pas;
     private TextView txt_edad;
 
-    private String name = "";
-    private String user = "";
-    private String pas = "";
-    private String edad = "";
+
 
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
@@ -46,8 +45,7 @@ public class Registrarse extends AppCompatActivity {
 
         bt_registrar = (Button)  findViewById(R.id.bt_registrar);
 
-        mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+
 
         txt_name = (TextView)  findViewById(R.id.txt_name);
         txt_user = (TextView)  findViewById(R.id.txt_user);
@@ -58,15 +56,22 @@ public class Registrarse extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                name = txt_name.getText().toString();
-                user = txt_user.getText().toString();
-                pas = txt_pas.getText().toString();
-                edad = txt_edad.getText().toString();
+                String name = txt_name.getText().toString();
+                String user = txt_user.getText().toString();
+                String pass = txt_pas.getText().toString();
+                String edad = txt_edad.getText().toString();
 
-                if (!name.isEmpty() && !user.isEmpty() && !pas.isEmpty() && !edad.isEmpty()) {
-                    if(pas.length() > 6){
-
-                        registerUser();
+                if (!name.isEmpty() && !user.isEmpty() && !pass.isEmpty() && !edad.isEmpty()) {
+                    if(pass.length() >= 6){
+                        Usuario usuario = new Usuario();
+                        usuario.setId(UUID.randomUUID().toString());
+                        usuario.setEdad(edad);
+                        usuario.setName(name);
+                        usuario.setUser(user);
+                        usuario.setPass(pass);
+                        DB.getInstancia().registerUser(usuario);
+                        Toast.makeText(getApplicationContext(), "Usuario creado exitosamente", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                     else {
                         Toast.makeText( Registrarse.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
@@ -80,41 +85,6 @@ public class Registrarse extends AppCompatActivity {
 
     }
 
-    private void registerUser(){
-        mAuth.createUserWithEmailAndPassword(user, pas).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Map<String, Object> map = new HashMap<>();
-                    map.put("name", name);
-                    map.put("email", user);
-                    map.put("pas", pas);
-                    map.put("edad", edad);
 
-                    String id = mAuth.getCurrentUser().getUid();
-
-                    mDatabase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-
-                            if (task.isSuccessful()) {
-                                Toast.makeText(Registrarse.this, "Registro Exitoso", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Registrarse.this, LoginActivity.class));
-                                finish();
-                            }
-                            else{
-                                Toast.makeText(Registrarse.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-                else {
-                    Toast.makeText(Registrarse.this, "Debe completar los campos vacios", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-    }
 
 }

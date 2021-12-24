@@ -73,6 +73,7 @@ public class Asiento_Pasajero extends AppCompatActivity {
     public void reserva(View v){
         Intent reserva = new Intent(this, Boleto_Reserva.class);
         startActivity(reserva);
+        finish();
 
     }
 }
