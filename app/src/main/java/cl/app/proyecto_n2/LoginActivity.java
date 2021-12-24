@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
 
         bt_reg = (Button)  findViewById(R.id.bt_reg);
         bt_log = (Button)  findViewById(R.id.bt_log);
-        bt_getUsersButton = (Button) findViewById(R.id.getUsersButton);
 
     }
 

@@ -13,6 +13,7 @@ public class Boleto_Reserva extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_boleto_reserva);
     }
+//Esta es la instrucción para salir de la apk
 
     public void salir (View v){
        finish();
